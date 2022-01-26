@@ -27,38 +27,46 @@ async function main() {
     console.log("Listed: ", total_listed_count);
 
     await page.waitForTimeout(800)
-
-    // const lastPosition = await scrollPageToBottom(page, {
-    //     size: 100000,
-    //     delay: 10
-    // })
-
     // await page.screenshot({path: "lmao.png", fullPage: true})
+
+    // LEN at first load (20)
     var len = await page.evaluate( async () => {
         return Array.from(document.querySelectorAll("h6.grid-card__title")).length
     })
     console.log("starting: ", len)
     
+    // scroll change to sue this
+    // https://stackoverflow.com/questions/51529332/puppeteer-scroll-down-until-you-cant-anymore
+    const delay = 3000;
+    const wait = (ms) => new Promise(res => setTimeout(res, ms));
+    const count = async () => {
+        await page.evaluate( async() => {
+            return Array.from(document.querySelectorAll("h6.grid-card__title")).length
+        })
+    };
+    const scrollDown = async () => {
+        await page.evaluate( async () => {
+            hi = Array.from(document.querySelector('.grid-card__title:last-child'))
+            console.log(hi);
+            //????????
+            return hi.scrollIntoView({ behavior: 'auto', block: 'end', inline: 'end' })
+        })
+    }
+
+    let preCount = 0;
+    let postCount = 0;
+    do {
+        preCount = await count();
+        await scrollDown();
+        await wait(delay);
+        postCount = await count();
+    } while (postCount > preCount);
+    await wait(delay);
+
+
     const nfts = await page.evaluate( async () => {
         var s = 0;
-        // keep scrolling until items = length
-        await new Promise((resolve, reject) => {
-            var distance = 10000;
-            var timer = setInterval(() => {
-                console.log("scroll: ", s)
-                window.scrollBy(0, distance);
-                // not getting len ??!!
-                var len = page.evaluate( () => {
-                 return Array.from(document.querySelectorAll("h6.grid-card__title")).length
-                })
-                console.log(len)
-                if(len >= total_listed_count){
-                    clearInterval(timer);
-                    resolve();
-                }
-                s += 1;
-            }, 100);
-        })
+
         // start gathering
         var temp = []
         var names = Array.from(document.querySelectorAll("h6.grid-card__title")).map(x => x.textContent)
@@ -74,29 +82,11 @@ async function main() {
         return temp;
     })
 
-    // console.log(nfts)
+    console.log(nfts)
     console.log(nfts.length)
     // await fs.writeFile("lmao.txt", JSON.stringify(nfts, null, 2))
     await brower.close()
 }
 
-async function autoScroll(page){
-    await page.evaluate(async () => {
-        await new Promise((resolve, reject) => {
-            var totalHeight = 0;
-            var distance = 10000;
-            var timer = setInterval(() => {
-                var scrollHeight = document.body.scrollHeight;
-                window.scrollBy(0, distance);
-                totalHeight += distance;
-
-                if(totalHeight >= 1000000){
-                    clearInterval(timer);
-                    resolve();
-                }
-            }, 100);
-        });
-    });
-}
 
 main();

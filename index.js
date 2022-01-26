@@ -74,7 +74,7 @@ async function main() {
         return temp;
     })
 
-    // console.log(nfts)
+    console.log(nfts)
     console.log(nfts.length)
     // await fs.writeFile("lmao.txt", JSON.stringify(nfts, null, 2))
     await brower.close()

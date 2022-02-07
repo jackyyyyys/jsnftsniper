@@ -17,16 +17,16 @@ async function main() {
     const page = await brower.newPage()
     await page.setUserAgent(userAgent.toString())
     await page.goto(url_collection)
-    collection = await page.evaluate(() =>  {
+    var collection = await page.evaluate(() =>  {
         return JSON.parse(document.querySelector("body").innerText); 
     });
     console.log("Collection", collection_name, "Listed:", collection.results.listedCount);
-    nfts = [];
-    for(var i = 0; i < collection.results.listedCount;) {
-        temp_payload = payload;
+    var nfts = [];
+    for(let i = 0; i < collection.results.listedCount;) {
+        var temp_payload = payload;
         temp_payload["$skip"] = i;
         await page.goto(`${url_nfts}${encodeURIComponent(JSON.stringify(temp_payload))}`);
-        new_nfts = await page.evaluate(() =>  {
+        var new_nfts = await page.evaluate(() =>  {
             return JSON.parse(document.querySelector("body").innerText); 
         });
         process.stdout.clearLine(0);
@@ -37,7 +37,7 @@ async function main() {
         i += new_nfts.results.length
     }
 
-    for(var i = 0; i < nfts.length; i++) {
+    for(let i = 0; i < nfts.length; i++) {
         console.log(nfts[i].title, nfts[i].price)
     }
     console.log("Collection", collection_name, "Listed:", collection.results.listedCount);

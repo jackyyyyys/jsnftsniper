@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jackyyyyys/jsnftsniper#readme",
   "dependencies": {
+    "axios": "^0.25.0",
     "puppeteer": "^9.1.1",
     "puppeteer-autoscroll-down": "^1.0.0",
     "user-agents": "^1.0.907"

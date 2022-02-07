@@ -1,0 +1,102 @@
+{
+    "results":[
+        {
+            "_id":"61fcd3240f8283817ec12618",
+            "id":"FYoxtcmmTrzrBEdysGPauu5sK89oN6UqjjpUB9Gao4ho",
+            "animationURL":null,
+            "attributes":[
+            {
+                "trait_type":"sky",
+                "value":"turbidy"
+            },
+            {
+                "trait_type":"sun",
+                "value":"normal warm"
+            },
+            {
+                "trait_type":"clouds",
+                "value":"altostratus"
+            },
+            {
+                "trait_type":"horizon",
+                "value":"jungle hills"
+            },
+            {
+                "trait_type":"midground",
+                "value":"cristal lake"
+            },
+            {
+                "trait_type":"far object",
+                "value":"stars"
+            },
+            {
+                "trait_type":"foreground",
+                "value":"prairie"
+            },
+            {
+                "trait_type":"near object",
+                "value":"motorcycle"
+            }
+            ],
+            "collectionName":"solsunsets",
+            "collectionTitle":"Solsunsets",
+            "content":"Sunset retrowave landscapes on Solana",
+            "createdAt":"2022-02-04T07:17:56.280Z",
+            "creators":[
+            {
+                "address":"3vZHVJwTK4fbX2mmfJsTrAkdBieGKy3qnQan87SuWVAB",
+                "verified":1,
+                "share":0
+            },
+            {
+                "address":"EKx4b376L4XkzKY7eTQ2SzXBwH4NKuHHjKbCpckJQyTZ",
+                "verified":1,
+                "share":50
+            },
+            {
+                "address":"4yMnN8ZDgEVGSFjcGcydsEsxPFUYsnev2vicNA1rS4dH",
+                "verified":1,
+                "share":50
+            }
+            ],
+            "escrowPubkey":"GzrzmE4xMmWcEN2HcMLPfXCpaTeCmLLUtaGNPuWqdzAH",
+            "externalURL":"https://solsunsets.com",
+            "img":"https://arweave.net/uhbcKEDI9yiLQMNV7sOZ06jdsXXTtzohzhh2HBtNfQ0?ext=png",
+            "imgCDN":null,
+            "mintAddress":"Cof2dMeQEY1o2hjpGBDGU5z4gYmsxcrWEL12DYzKzDKz",
+            "owner":"C4mnH2ZvLyx7XxH8iUeJWwFU1ZGw4E4FTt1oeQkSnAZg",
+            "price":0.75,
+            "primarySaleHappened":1,
+            "properties":{
+            "creators":[
+                {
+                    "address":"qoQHzaee7FzdivXk4KDjdrAVQwYGFXpDvhdZfrGHqUk",
+                    "share":50
+                },
+                {
+                    "address":"5Mvb4RGM3uQKbkSYF2EdeaD4yvMQFD6uuyM8M8u5Do9R",
+                    "share":50
+                }
+            ],
+            "files":[
+                {
+                    "uri":"https://arweave.net/uhbcKEDI9yiLQMNV7sOZ06jdsXXTtzohzhh2HBtNfQ0?ext=png",
+                    "type":"image/png"
+                },
+                {
+                    "uri":"https://arweave.net/wsB9xxBOmJ23DzhQ1eDBv7i8JOgM-27EQyDWwdlQq2w?ext=png",
+                    "type":"image/png"
+                }
+            ]
+            },
+            "propertyCategory":null,
+            "sellerFeeBasisPoints":400,
+            "supply":1,
+            "title":"Solsunsets #3429",
+            "tokenDelegate":null,
+            "tokenDelegateValid":false,
+            "updateAuthority":"EKx4b376L4XkzKY7eTQ2SzXBwH4NKuHHjKbCpckJQyTZ"
+        },
+        {}, {}, {}
+    ]
+}
